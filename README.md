@@ -21,12 +21,13 @@ A website which connects employers and candidates. Built using Django Framework 
   ```python -m venv ~/.virtualenv/udyog-venv```
 * Activate the environment<br>
   ```source ~/.virtualenv/udyog-venv/bin/activate```
-* Install the required packages in the newly created venv<br>
-  ```pip install -r requirements.txt```
 * Clone this repository<br>
   ```git clone https://github.com/Prajna-Ramamurthy/Udyog-Portal.git```
-* Go to the top level django directory (where manage.py file is located)<br>
-  ```cd Udyog-Portal/udyog```
+* Install the required packages in the newly created venv as per requirements.txt<br>
+  ```cd Udyog-Portal```<br>
+  ```pip install -r requirements.txt```
+* Go to the top level udyog project directory (where manage.py file is located)<br>
+  ```cd udyog```
 * Create static files<br>
   ```python manage.py collectstatic```
 * Prepare migration files<br>
