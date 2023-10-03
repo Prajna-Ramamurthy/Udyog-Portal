@@ -26,7 +26,7 @@ A website which connects employers and candidates. Built using Django Framework 
 * Clone this repository<br>
   ```git clone https://github.com/Prajna-Ramamurthy/Udyog-Portal.git```
 * Go to the top level django directory (where manage.py file is located)<br>
-  ```cd Upyog-Portal/udyog```
+  ```cd Udyog-Portal/udyog```
 * Create static files<br>
   ```python manage.py collectstatic```
 * Prepare migration files<br>
