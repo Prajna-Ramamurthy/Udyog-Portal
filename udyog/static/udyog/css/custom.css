@@ -1,0 +1,133 @@
+body {
+    min-height: 100vh;
+    margin: 10;
+    background-color: #fff; /* Background color for the entire page */
+    font-family: "Open Sans", sans-serif; /* Choose a suitable font-family */
+}
+
+a {
+    color: #007bff; /* Link text color */
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat", sans-serif; /* Choose a suitable font-family */
+    font-weight: normal;
+}
+
+/* Layout styles */
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col-sm-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+/* Component styles */
+
+.login-container {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 100%;
+    margin: 0 auto;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.login-container:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.login-container h1 {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.login-container form {
+    padding: 15px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 12px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Typography styles */
+
+h1 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+}
+
+h5 {
+    font-size: 1rem;
+    line-height: 1.25rem;
+}
+
+h6 {
+    font-size: 0.875rem;
+    line-height: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Media queries */
+
+@media (max-width: 576px) {
+    .col-sm-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .col-sm-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

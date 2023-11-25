@@ -1,0 +1,41 @@
+[
+{
+    "model": "employers.job",
+    "pk": 1,
+    "fields": {
+        "employer": 1,
+        "title": "Intern",
+        "company": "Udyog",
+        "location": "India",
+        "description": "Intern at Udyog, India",
+        "skills_req": "Teamwork,Communication,Organization,Management",
+        "job_type": "Internship",
+        "link": null,
+        "slug": "intern",
+        "date_posted": "2023-10-03T13:43:25.876Z"
+    }
+},
+{
+    "model": "employers.selected",
+    "pk": 1,
+    "fields": {
+        "job": 1,
+        "applicant": 2,
+        "date_posted": "2023-10-03T15:35:00.502Z"
+    }
+},
+{
+    "model": "employers.jobreport",
+    "pk": 1,
+    "fields": {
+        "job": 1,
+        "report_date": "2023-10-21T21:52:57Z",
+        "link": null,
+        "slug": "intern",
+        "num_applicants": 0,
+        "num_selected": 1,
+        "applicants": [],
+        "selected": []
+    }
+}
+]

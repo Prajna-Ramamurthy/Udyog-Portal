@@ -1,0 +1,20 @@
+{% extends "users/layout.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+  <h1>Saved Searches</h1>
+  <p>Here you can manage your saved searches.</p>
+
+  
+  <!-- Display the list of saved searches if available -->
+  <h2>Your Saved Searches:</h2>
+  <ul>
+    {% for saved_search in saved_searches %}
+    <li>{{ saved_search.name }} - {{ saved_search.keywords }}</li>
+    {% endfor %}
+  </ul>
+</div>
+
+</div>
+{% endblock %}

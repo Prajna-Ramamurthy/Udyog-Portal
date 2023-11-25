@@ -1,0 +1,68 @@
+{% extends "users/layout.html" %}
+{% load static %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#regenerate-report-button').click(function() {
+            // Make an AJAX request to the view that regenerates the report
+            $.ajax({
+                url: "{% url 'regenerate-report' %}",
+                method: 'POST',
+                data: $('#regenerate-report-form').serialize(),
+                success: function(response) {
+                    // Update the report container with the new report content
+                    $('#report-container').html(response);
+                },
+                error: function() {
+                    alert('Error regenerating report.');
+                }
+            });
+        });
+    });
+</script>
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <h1>Job Reports</h1>
+            <br>
+            <form id="regenerate-report-form">
+                {% csrf_token %}
+                <button type="button" id="regenerate-report-button" class="btn btn-primary">Regenerate Report</button>
+            </form>
+            <div id="report-container"></div>
+            <br>
+            <p>
+            Total Applicants: {{ total_applicants_count }} <br>
+            Total Selected: {{ total_selected_count }}
+            </p>
+            <br>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Job Title</th>
+                        <th>Report Date</th>
+                        <th>Number of Applicants</th>
+                        <th>Number Selected</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for report in job_reports %}
+                    <tr>
+                        <td>{{ report.job.title }}</td>
+                        <td>{{ report.report_date }}</td>
+                        <td>{{ report.num_applicants }}</td>
+                        <td>{{ report.num_selected }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="4">No job reports available.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

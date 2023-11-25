@@ -1,0 +1,44 @@
+[
+{
+    "model": "candidates.profile",
+    "pk": 8,
+    "fields": {
+        "full_name": "Pranathi Praveen",
+        "country": "IN",
+        "location": "Mumbai",
+        "resume": "resumes/Resume.pdf",
+        "grad_year": 2022,
+        "looking_for": "Part Time",
+        "gender": "F",
+        "slug": "pranathi"
+    }
+},
+{
+    "model": "candidates.profile",
+    "pk": 9,
+    "fields": {
+        "full_name": "Praakhya A",
+        "country": "IN",
+        "location": "Delhi",
+        "resume": "resumes/Resume.pdf",
+        "grad_year": 2023,
+        "looking_for": "Remote",
+        "gender": "F",
+        "slug": "praakhya"
+    }
+},
+{
+    "model": "candidates.profile",
+    "pk": 10,
+    "fields": {
+        "full_name": "Pragya Srivastava",
+        "country": "IN",
+        "location": "Pune",
+        "resume": "resumes/Resume.pdf",
+        "grad_year": 2024,
+        "looking_for": "Intern",
+        "gender": "F",
+        "slug": "pragya"
+    }
+}
+]

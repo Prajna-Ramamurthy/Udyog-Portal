@@ -1,0 +1,128 @@
+[
+{
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$PbOcAxItloqbETeSttYxdT$EHPT1OVwAqWZw/Co+eCEp2Rywid1k6PfAr379FANRiY=",
+        "last_login": "2023-11-14T06:20:32.637Z",
+        "is_superuser": false,
+        "username": "microsoft",
+        "first_name": "Microsoft",
+        "last_name": "HR",
+        "email": "udyogtst+microsoft@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-12-03T13:39:07.159Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$PbOcAxItloqbETeSttYxdT$EHPT1OVwAqWZw/Co+eCEp2Rywid1k6PfAr379FANRiY=",
+        "last_login": "2023-11-14T06:20:32.637Z",
+        "is_superuser": false,
+        "username": "amazon",
+        "first_name": "Amazon",
+        "last_name": "HR",
+        "email": "udyogtst+amazon@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-11-03T13:39:07.159Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$PbOcAxItloqbETeSttYxdT$EHPT1OVwAqWZw/Co+eCEp2Rywid1k6PfAr379FANRiY=",
+        "last_login": "2023-11-14T06:20:32.637Z",
+        "is_superuser": false,
+        "username": "ibm",
+        "first_name": "IBM",
+        "last_name": "HR",
+        "email": "udyogtst+ibm@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-10-03T13:39:07.159Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$Chq9ZjF6FRgvVvI7GvEDv2$iJP4bR9/68YPavaWwWCwRe10F2RYC446vGGKod2M0FA=",
+        "last_login": "2023-11-13T15:16:20.787Z",
+        "is_superuser": false,
+        "username": "prajna",
+        "first_name": "Prajna",
+        "last_name": "Ramamurthy",
+        "email": "prajna.ramamurthy@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-10-10T13:51:04.015Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$Chq9ZjF6FRgvVvI7GvEDv2$iJP4bR9/68YPavaWwWCwRe10F2RYC446vGGKod2M0FA=",
+        "last_login": "2023-11-13T15:16:20.787Z",
+        "is_superuser": false,
+        "username": "pranathi",
+        "first_name": "Pranathi",
+        "last_name": "Praveen",
+        "email": "udyogtst+pranathi@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-10-11T13:51:04.015Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 9,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$Chq9ZjF6FRgvVvI7GvEDv2$iJP4bR9/68YPavaWwWCwRe10F2RYC446vGGKod2M0FA=",
+        "last_login": "2023-11-13T15:16:20.787Z",
+        "is_superuser": false,
+        "username": "praakhya",
+        "first_name": "Praakhya",
+        "last_name": "A",
+        "email": "udyogtst+praakhya@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-10-15T13:51:04.015Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 10,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$Chq9ZjF6FRgvVvI7GvEDv2$iJP4bR9/68YPavaWwWCwRe10F2RYC446vGGKod2M0FA=",
+        "last_login": "2023-11-13T15:16:20.787Z",
+        "is_superuser": false,
+        "username": "pragya",
+        "first_name": "Pragya",
+        "last_name": "Srivastava",
+        "email": "udyogtst+pragya@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-10-18T13:51:04.015Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]
