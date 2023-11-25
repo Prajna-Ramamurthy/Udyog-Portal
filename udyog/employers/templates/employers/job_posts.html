@@ -8,6 +8,7 @@
     Please <a href="{% url 'add-job' %}">add a job</a> first!
   </h4>
   {% else %}
+  <a href="{% url 'job-reports' %}" class="btn btn-primary">View Job Reports</a>
   <div class="row">
     {% for job in jobs %}
     <div class="col-md-6">

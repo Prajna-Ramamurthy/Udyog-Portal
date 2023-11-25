@@ -1,5 +1,8 @@
-{% extends "users/layout.html" %} {% load static %} {% load crispy_forms_tags %}
-{% block content %} <br /><br />
+{% extends "users/layout.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br /><br />
 <div class="container">
   <div class="row">
     <div class="col-md-6">
@@ -11,10 +14,12 @@
             <div class="form-group">
               <p>Name: {{ profile.full_name }}</p>
               <p>Email: {{ u.email }}</p>
+              <p>Gender: {{ profile.gender }}</p>
               <p>Country: {{ profile.country.name }}</p>
               <p>Location: {{ profile.location }}</p>
               <p>Graduation Year: {{ profile.grad_year }}</p>
               <p>Looking For: {{ profile.looking_for }}</p>
+              
               {% if profile.resume %}
               <p>
                 Resume:

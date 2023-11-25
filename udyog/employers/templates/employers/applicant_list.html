@@ -1,9 +1,19 @@
 {% extends "users/layout.html" %} {% load static %} {% block content %}
 <br /><br />
 <div>
+  
   <h3 class="text-center">
     <b>Applicants for {{job.title}}</b>
   </h3>
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Filter: {{ filter_option|capfirst }}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="?filter=recent">Recent</a>
+      <a class="dropdown-item" href="?filter=all">All</a>
+    </div>
+  </div>
   <br />
   {% if profiles %}
   <div class="row">

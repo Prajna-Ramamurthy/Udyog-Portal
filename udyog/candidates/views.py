@@ -1,16 +1,15 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Profile, Skill, AppliedJobs, SavedJobs
+from .models import Profile, Skill, AppliedJobs, SavedJobs, SavedSearch
 from employers.models import Job, Applicants, Selected
 from .forms import ProfileUpdateForm, NewSkillForm
 from django.contrib.auth.decorators import login_required
-from django.conf import settings
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.views.generic import UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.decorators.csrf import csrf_exempt
-from django.contrib.auth import get_user_model
+# from django.contrib.auth import get_user_model
 from django.core.paginator import Paginator
 
 
@@ -105,13 +104,21 @@ def job_detail(request, slug):
 def saved_jobs(request):
     jobs = SavedJobs.objects.filter(
         user=request.user).order_by('-date_posted')
-    return render(request, 'candidates/saved_jobs.html', {'jobs': jobs, 'candidate_navbar': 1})
+    
+    # Count total saved jobs
+    total_saved_jobs = SavedJobs.objects.filter(user=request.user).count()
+
+    return render(request, 'candidates/saved_jobs.html', {'jobs': jobs, 'total_saved_jobs': total_saved_jobs, 'candidate_navbar': 1})
 
 # view to display applied jobs for that user
 @login_required
 def applied_jobs(request):
     jobs = AppliedJobs.objects.filter(
         user=request.user).order_by('-date_posted')
+    
+    # Count total applied jobs
+    total_applied_jobs = AppliedJobs.objects.filter(user=request.user).count()
+
     statuses = []
     for job in jobs:
         if Selected.objects.filter(job=job.job).filter(applicant=request.user).exists():
@@ -121,7 +128,7 @@ def applied_jobs(request):
         else:
             statuses.append(2)
     zipped = zip(jobs, statuses)
-    return render(request, 'candidates/applied_jobs.html', {'zipped': zipped, 'candidate_navbar': 1})
+    return render(request, 'candidates/applied_jobs.html', {'zipped': zipped, 'total_applied_jobs': total_applied_jobs, 'candidate_navbar': 1})
 
 # view which handles display of relevant jobs according to skills of the users
 @login_required
@@ -189,6 +196,7 @@ def my_profile(request):
 def edit_profile(request):
     you = request.user
     profile = Profile.objects.filter(user=you).first()
+
     if request.method == 'POST':
         form = ProfileUpdateForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():
@@ -198,6 +206,7 @@ def edit_profile(request):
             return redirect('my-profile')
     else:
         form = ProfileUpdateForm(instance=profile)
+
     context = {
         'form': form,
     }
@@ -256,3 +265,15 @@ def remove_job(request, slug):
     saved_job = SavedJobs.objects.filter(job=job, user=user).first()
     saved_job.delete()
     return HttpResponseRedirect('/job/{}'.format(job.slug))
+
+
+@login_required
+def saved_searches(request):
+    # Retrieve the saved searches for the current user
+    saved_searches = SavedSearch.objects.filter(user=request.user)
+
+    context = {
+        'saved_searches': saved_searches,
+    }
+
+    return render(request, 'candidates/saved_searches.html', context)

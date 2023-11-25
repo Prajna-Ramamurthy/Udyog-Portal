@@ -5,13 +5,13 @@ from autoslug import AutoSlugField
 from django_countries.fields import CountryField
 from django.utils import timezone
 
+
 CHOICES = (
     ('Full Time', 'Full Time'),
     ('Part Time', 'Part Time'),
     ('Internship', 'Internship'),
     ('Remote', 'Remote'),
 )
-
 
 class Job(models.Model):
     employer = models.ForeignKey(
@@ -24,12 +24,11 @@ class Job(models.Model):
     job_type = models.CharField(
         max_length=30, choices=CHOICES, default='Full Time', null=True)
     link = models.URLField(null=True, blank=True)
-    slug = AutoSlugField(populate_from='title', unique=True, null=True)
+    slug = AutoSlugField(populate_from='title', unique=False, null=True)
     date_posted = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.title
-
 
 class Applicants(models.Model):
     job = models.ForeignKey(
@@ -39,8 +38,7 @@ class Applicants(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return self.applicant
-
+        return f"Applicant for {self.job.title} - {self.applicant.username}"
 
 class Selected(models.Model):
     job = models.ForeignKey(
@@ -50,4 +48,19 @@ class Selected(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return self.applicant
+        return f"Selected for {self.job.title} - {self.applicant.username}"
+
+class JobReport(models.Model):
+    job = models.ForeignKey(
+        Job, on_delete=models.CASCADE, related_name='reports')
+    report_date = models.DateTimeField(default=timezone.now)
+    link = models.URLField(null=True, blank=True)
+    slug = AutoSlugField(populate_from='job__title', unique=True, null=True)
+    num_applicants = models.PositiveIntegerField(default=0)
+    num_selected = models.PositiveIntegerField(default=0)
+    applicants = models.ManyToManyField(Applicants, related_name='job_reports', blank=True)
+    selected = models.ManyToManyField(Selected, related_name='job_reports', blank=True)
+
+    def __str__(self):
+        return f"Report for {self.job.title} - {self.report_date}"
+    

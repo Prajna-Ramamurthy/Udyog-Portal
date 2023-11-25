@@ -1,31 +1,27 @@
-{% extends "users/layout.html" %} {% load static %} {% block content %}
+{% extends "users/layout.html" %} 
+{% load static %} 
+{% block content %}
 <br /><br />
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-10 col-lg-8 mx-auto">
       <h2><b>Search Jobs</b></h2>
-      <form
-        class="form-signin mt-4"
-        action="{% url 'job-search-list' %}"
-        method="get"
-      >
-        <input
-          name="p"
-          type="text"
-          class="form-control"
-          placeholder="Enter Job Title, Skills, Type or Company"
-        /><br />
-        <input
-          name="q"
-          type="text"
-          class="form-control"
-          placeholder="Enter Job Location"
-        />
+      <form class="form-signin mt-4" action="{% url 'job-search-list' %}" method="get">
+        <input name="p" type="text" class="form-control" placeholder="Enter Job Title, Skills, Type or Company" /><br />
+        <input name="q" type="text" class="form-control" placeholder="Enter Job Location" />
         <br />
         <div class="form-group">
           <button class="btn btn-lg btn-primary btn-block" type="submit">
             Search Jobs
           </button>
+        </div>
+        <!-- Add the "Saved Searches" button here -->
+        <div class="row">
+          <div class="col-md-6">
+            <a class="btn btn-secondary" href="{% url 'saved_searches' %}">
+            Saved Searches
+            </a>
+          </div>
         </div>
       </form>
     </div>
@@ -33,19 +29,13 @@
   <div class="container mt-3">
     <div class="row">
       <div class="col-sm-12 col-md-10 col-lg-8 mx-auto">
-        {% if user.is_authenticcated %}
+        {% if user.is_authenticated %}
         <p class="text-center">
-          <b
-            >Employers -
-            <a href="{% url 'add-job' %}">Post a Job</a></b
-          >
+          <b>Employers - <a href="{% url 'add-job' %}">Post a Job</a></b>
         </p>
         {% else %}
         <p class="text-center">
-          <b
-            >Employers -
-            <a href="{% url 'detail-employers' %}">Post a Job</a></b
-          >
+          <b>Employers - <a href="{% url 'detail-employers' %}">Post a Job</a></b>
         </p>
         {% endif %}
       </div>
@@ -61,44 +51,14 @@
 
             <form class="form-signin">
               <div class="form-group">
-                <a
-                  class="btn btn-outline-primary mr-2 mt-2"
-                  href="/job/?p=software&q="
-                  >Software</a
-                >
-                <a
-                  class="btn btn-outline-info mr-2 mt-2"
-                  href="/job/?p=internship&q="
-                  >Internship</a
-                >
-                <a
-                  class="btn btn-outline-danger mr-2 mt-2"
-                  href="/job/?p=product+manager&q="
-                  >Product Manager</a
-                >
-                <a
-                  class="btn btn-outline-secondary mr-2 mt-2"
-                  href="/job/?p=python&q="
-                  >Python</a
-                >
-                <a class="btn btn-outline-dark mr-2 mt-2" href="/job/?p=web&q="
-                  >Web</a
-                >
-                <a
-                  class="btn btn-outline-danger mr-2 mt-2"
-                  href="/job/?p=android&q="
-                  >Android</a
-                >
-                <a
-                  class="btn btn-outline-success mr-2 mt-2"
-                  href="/job/?p=analyst&q="
-                  >Analyst</a
-                >
-                <a
-                  class="btn btn-outline-info mr-2 mt-2"
-                  href="/job/?p=sales&q="
-                  >Sales</a
-                >
+                <a class="btn btn-outline-primary mr-2 mt-2" href="/job/?p=software&q=">Software</a>
+                <a class="btn btn-outline-info mr-2 mt-2" href="/job/?p=internship&q=">Internship</a>
+                <a class="btn btn-outline-danger mr-2 mt-2" href="/job/?p=product+manager&q=">Product Manager</a>
+                <a class="btn btn-outline-secondary mr-2 mt-2" href="/job/?p=python&q=">Python</a>
+                <a class="btn btn-outline-dark mr-2 mt-2" href="/job/?p=web&q=">Web</a>
+                <a class="btn btn-outline-danger mr-2 mt-2" href="/job/?p=android&q=">Android</a>
+                <a class="btn btn-outline-success mr-2 mt-2" href="/job/?p=analyst&q=">Analyst</a>
+                <a class="btn btn-outline-info mr-2 mt-2" href="/job/?p=sales&q=">Sales</a>
               </div>
             </form>
           </div>
@@ -106,5 +66,5 @@
       </div>
     </div>
   </div>
-  {% endblock content %}
 </div>
+{% endblock content %}
