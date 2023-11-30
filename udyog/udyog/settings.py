@@ -102,7 +102,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',  # Set the database engine to MySQL.
         'NAME': 'udyog',  # Replace with your desired database name.
         'USER': 'root',  # Replace with your MySQL username.
-        'PASSWORD': 'Prajna@2003',  # Replace with your MySQL password.
+        'PASSWORD': '**********',  # Replace with your MySQL password.
         'HOST': 'localhost',  # Replace with the host where your MySQL server is running.
         'PORT': '3306',  # Replace with the port your MySQL server is listening on (usually 3306).
     }
